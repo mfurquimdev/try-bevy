@@ -85,3 +85,14 @@ cargo run
 
 It will take a while, since it's compiling a whole game engine.  
 Subsequent compiles will be iterative and faster.
+
+# Bevy Examples
+
+Continuing Bevy learning with [Bevy Examples](https://github.com/bevyengine/bevy/blob/latest/examples)
+
+
+## Sprite Animation
+
+
+Showing chicken running and plants growing using [sprite sheet](https://github.com/bevyengine/bevy/blob/latest/examples/2d/sprite_sheet.rs) as reference.
+
