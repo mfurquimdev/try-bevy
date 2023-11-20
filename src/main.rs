@@ -22,6 +22,15 @@ fn greet_people(query: Query<&Name, With<Person>>) {
     }
 }
 
+pub struct HelloPlugin;
+
+impl Plugin for HelloPlugin {
+    fn build(&self, app: &mut App) {
+        app.add_systems(Startup, add_people)
+            .add_systems(Update, (hello_world, greet_people));
+    }
+}
+
 
 fn hello_world() {
     println!("hello world!");
@@ -30,9 +39,7 @@ fn hello_world() {
 
 fn main() {
     App::new()
-        // Startup system happens only once, before all other systems
-        .add_systems(Startup, add_people)
-        .add_systems(Update, (hello_world, greet_people))
+        .add_plugins((DefaultPlugins, HelloPlugin))
         .run();
 }
 
